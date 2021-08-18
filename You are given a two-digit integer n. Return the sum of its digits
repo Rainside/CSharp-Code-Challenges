@@ -1,0 +1,46 @@
+You are given a two-digit integer n. Return the sum of its digits.
+
+Example
+
+For n = 29, the output should be
+addTwoDigits(n) = 11.
+
+Input/Output
+
+    [execution time limit] 3 seconds (cs)
+
+    [input] integer n
+
+    A positive two-digit integer.
+
+    Guaranteed constraints:
+    10 ≤ n ≤ 99.
+
+    [output] integer
+
+    The sum of the first and second digits of the input number.
+//
+
+int addTwoDigits(int n) {
+
+//sets a double x to equal input n, so that it may be passed to Math.Floor
+decimal x = n;
+
+//Retreives the tens place of the two digit double by dividing by ten then dropping decimal by rounding down using Math.Floor method
+decimal tens = Math.Floor(x / 10);
+
+//explicit cast of y to int type
+int y;
+y = (int)tens;
+
+//retrieves the ones place via modulo 
+int ones = n % 10;
+
+//adds numbers together
+int sum = (y + ones);
+
+
+//returns the sum to console
+return sum;
+
+}
